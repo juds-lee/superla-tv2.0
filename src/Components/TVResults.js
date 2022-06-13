@@ -3,16 +3,19 @@ import { onValue, ref, push } from 'firebase/database';
 import database from '../firebase';
 import { useEffect } from 'react';
 
-// Config
 const TVResults = ({ tvRes, showSearch }) => {
     const handleListName = (e) => {
     e.preventDefault();
     // pull the value from input for list name
     const listName = e.target[0].value;
     console.log(listName)
+    if ( listName === "" ) {
+      alert("please create list name")
+    } else {  
     // push into firebase and alert user
     push(ref(database), { listName });
     alert(`New list created: ${listName}`);
+    }
   };
    const loadLists = (response) => {
     // grab all 'add to list' selects and change from nodelist to array
