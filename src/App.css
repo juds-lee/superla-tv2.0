@@ -1,38 +1,228 @@
+/* Base Styles */
 .App {
+  text-align: center;
+  position: relative;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: #16181E;
+  color: #f9f9f9;
+  font-size: 125%;
+  font-family: 'Inconsolata', monospace;
+}
+
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00b4a8;
+}
+
+h1 {
+  margin: 2rem 0;
+  font-family: 'Anton', sans-serif;
+}
+
+button {
+  background-color: #005a54;
+  color: #f9f9f9;
+  border: none;
+  padding: .6rem;
+  border-radius: .6rem;
+  margin: 10px 10px;
+}
+
+button:hover,
+button:focus {
+  background-color: #f9f9f9;
+  color: #005a54;
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+footer {
+  transform: translateY(60px);
+  margin-bottom: 100px;
+}
+
+/* App.js */
+
+.enterShow {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.query {
+  height: 2.5rem;
+  background-color: #21242D;
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  border-radius: .6rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* TV Results */
+
+.tvContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  background-color: #21242d;
+  border: 1px solid #f9f9f9;
+  padding: 10px 0;
+  border-radius: .7rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tvContainer .flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flexContainer button {
+  width: 50%;
+  margin: 5px 0;
+}
+
+.flexContainer select {
+  margin: 5px 0;
+  padding: 3px 0;
+  max-width: 80%;
+  text-align: center;
+}
+
+.addToListContainer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.close {
+  background-color: #21242D;
+  border: 1px solid #f9f9f9;
+  margin: 20px 0 0 0;
+  width: 50px;
+}
+
+.modal {
+  background: #005a54;
+  line-height: 1.5rem;
+}
+
+.infoModal {
+  background: rgba(0, 90, 84);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-bottom: 20px;
+  border-radius: .7rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.infoModal .imgContainer {
+  width: 80%;
+  margin-top: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.infoModal .textContainer .summary {
+  height: 35vh;
+  overflow-y: scroll;
+  margin: 8px 0 0 0;
+  scrollbar-color: #f9f9f9 #002724;
+}
+
+.infoModal .textContainer {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #005a54;
+}
+
+.showContainer:last-child {
+  display: none;
+}
+
+.showContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  background-color: #21242d;
+  border: 1px solid #f9f9f9;
+  padding: 10px 0;
+  border-radius: .7rem;
+}
+
+.newListModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: .7rem;
+}
+
+.newListModal .newListForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 15px 25px 15px;
+  gap: 15px;
+}
+
+.newListModal .submitList {
+  background-color: #21242d;
+  border: 1px solid #f9f9f9;
+  padding: 10px 20px;
+}
+
+.newListQuery {
+  height: 2.5rem;
+  border-radius: .6rem;
+  text-align: center;
+}
+
+@media (min-width: 340px) {
+  img{
+   width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 500px){
+  .tv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .showInfoImg img {
+    width: 30%;
   }
 }
