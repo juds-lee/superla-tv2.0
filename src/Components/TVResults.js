@@ -70,6 +70,7 @@ const TVResults = ({ tvRes, showSearch }) => {
     workableArray.push(tvRes[formId].show.network.country.code);
     // push the info to firebase
     push(keyRef, workableArray);
+    alert(`${tvRes[formId].show.name} has been added to list`)
   };
 
   return (
